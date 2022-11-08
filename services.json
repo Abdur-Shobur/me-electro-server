@@ -1,0 +1,50 @@
+[
+  {
+    "service_name": "Offset Printing",
+    "service_details": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt labore etern dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex eas commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt inter on culpa qui officia deserunt mollit anim id est laborum. Diam ligula eget cras neque dolor vulputate rutrum varius magnis facilisis lobortis taciti augue nam pretium vestibulum uterin nunc vitae nec ullamcorper fusce conubia tempor placerat phasellus.",
+    "price": 232,
+    "icon": ""
+  },
+  {
+    "service_name": "3d Printing",
+    "service_details": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt labore etern dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex eas commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt inter on culpa qui officia deserunt mollit anim id est laborum. Diam ligula eget cras neque dolor vulputate rutrum varius magnis facilisis lobortis taciti augue nam pretium vestibulum uterin nunc vitae nec ullamcorper fusce conubia tempor placerat phasellus.",
+    "price": 232,
+    "icon": ""
+  },
+  {
+    "service_name": "Digital Printing",
+    "service_details": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt labore etern dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex eas commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt inter on culpa qui officia deserunt mollit anim id est laborum. Diam ligula eget cras neque dolor vulputate rutrum varius magnis facilisis lobortis taciti augue nam pretium vestibulum uterin nunc vitae nec ullamcorper fusce conubia tempor placerat phasellus.",
+    "price": 232,
+    "icon": ""
+  },
+  {
+    "service_name": "Brand Printing",
+    "service_details": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt labore etern dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex eas commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt inter on culpa qui officia deserunt mollit anim id est laborum. Diam ligula eget cras neque dolor vulputate rutrum varius magnis facilisis lobortis taciti augue nam pretium vestibulum uterin nunc vitae nec ullamcorper fusce conubia tempor placerat phasellus.",
+    "price": 232,
+    "icon": ""
+  },
+  {
+    "service_name": "Business Card",
+    "service_details": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt labore etern dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex eas commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt inter on culpa qui officia deserunt mollit anim id est laborum. Diam ligula eget cras neque dolor vulputate rutrum varius magnis facilisis lobortis taciti augue nam pretium vestibulum uterin nunc vitae nec ullamcorper fusce conubia tempor placerat phasellus.",
+    "price": 232,
+    "icon": ""
+  },
+  {
+    "service_name": "Flyer Printing",
+    "service_details": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt labore etern dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex eas commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt inter on culpa qui officia deserunt mollit anim id est laborum. Diam ligula eget cras neque dolor vulputate rutrum varius magnis facilisis lobortis taciti augue nam pretium vestibulum uterin nunc vitae nec ullamcorper fusce conubia tempor placerat phasellus.",
+    "price": 232,
+    "icon": ""
+  },
+  {
+    "service_name": "Poster Printing",
+    "service_details": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt labore etern dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex eas commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt inter on culpa qui officia deserunt mollit anim id est laborum. Diam ligula eget cras neque dolor vulputate rutrum varius magnis facilisis lobortis taciti augue nam pretium vestibulum uterin nunc vitae nec ullamcorper fusce conubia tempor placerat phasellus.",
+    "price": 232,
+    "icon": ""
+  },
+  {
+    "service_name": "Banner Printing",
+    "service_details": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt labore etern dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex eas commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt inter on culpa qui officia deserunt mollit anim id est laborum. Diam ligula eget cras neque dolor vulputate rutrum varius magnis facilisis lobortis taciti augue nam pretium vestibulum uterin nunc vitae nec ullamcorper fusce conubia tempor placerat phasellus.",
+    "price": 232,
+    "icon": ""
+  }
+]

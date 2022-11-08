@@ -1,0 +1,50 @@
+[
+  {
+    "service_name": "Electrical Installation",
+    "rating": 3,
+    "price": 45,
+    "icon": "",
+    "img": "",
+    "service_details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "service_name": "Electrical Wiring",
+    "rating": 4,
+    "price": 21,
+    "icon": "",
+    "img": "",
+    "service_details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "service_name": "Electrical Repair",
+    "rating": 5,
+    "price": 31,
+    "icon": "",
+    "img": "",
+    "service_details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "service_name": "Electrical Safety",
+    "rating": 3,
+    "price": 22,
+    "icon": "",
+    "img": "",
+    "service_details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "service_name": "Electrical Switches",
+    "rating": 5,
+    "price": 42,
+    "icon": "",
+    "img": "",
+    "service_details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "service_name": "Light Installation",
+    "rating": 4,
+    "price": 32,
+    "icon": "",
+    "img": "",
+    "service_details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+]
