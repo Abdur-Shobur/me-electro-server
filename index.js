@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
 const run = async () => {
   const db = client.db('assignment11')
   const coll = db.collection('services')
+  const revColl = db.collection('review')
   try {
     // get req
     app.get('/services', async (req, res) => {
@@ -46,11 +47,46 @@ const run = async () => {
       res.send(result)
     })
 
+    // add services
     app.post('/services', async (req, res) => {
       const service = req.body
       const result = await coll.insertOne(service)
       res.send(result)
       console.log(req.body, result)
+    })
+
+    // delete services
+    app.delete('/services/:id', async (req, res) => {
+      const id = req.params.id
+      const query = { _id: ObjectId(id) }
+      // const cursor = coll.find(query)
+      const result = await coll.deleteOne(query)
+      res.send(result)
+    })
+
+    // add review
+    app.post('/review', async (req, res) => {
+      const review = req.body
+      const result = await revColl.insertOne(review)
+      res.send(result)
+    })
+
+    // get reviews
+    app.get('/review/:id', async (req, res) => {
+      const id = req.params.id
+      const query = { porduct_id: id }
+      const cursor = revColl.find(query)
+      const result = await cursor.toArray()
+      res.send(result)
+    })
+    // get user reviews
+    app.get('/review/user/:id', async (req, res) => {
+      const id = req.params.id
+      const query = { user_id: id }
+      // const query = {}
+      const cursor = revColl.find(query)
+      const result = await cursor.toArray()
+      res.send(result)
     })
   } finally {
   }
