@@ -83,7 +83,6 @@ const run = async () => {
     app.get('/review/user/:id', async (req, res) => {
       const id = req.params.id
       const query = { user_id: id }
-      // const query = {}
       const cursor = revColl.find(query)
       const result = await cursor.toArray()
       res.send(result)
