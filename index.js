@@ -70,6 +70,13 @@ const run = async () => {
       const result = await revColl.insertOne(review)
       res.send(result)
     })
+    // add review
+    app.get('/review', async (req, res) => {
+      const query = {}
+      const cursor = revColl.find(query)
+      const result = await cursor.toArray()
+      res.send(result)
+    })
 
     // get single reviews by review id
     app.get('/review/:id', async (req, res) => {
@@ -79,13 +86,32 @@ const run = async () => {
       const result = await cursor.toArray()
       res.send(result)
     })
+    // update single reviews by review id
+    app.put('/review/:id', async (req, res) => {
+      const id = req.params.id
+      const query = { _id: ObjectId(id) }
+      const update_data = req.body
+      const option = { upsert: true }
+      const updateUser = {
+        $set: {
+          review: update_data.review,
+          review_message: update_data.review_message,
+        },
+      }
+      const result = await revColl.updateOne(query, updateUser, option)
+      // const cursor = revColl.find(query)
+      // const result = await cursor.toArray()
+      res.send(result)
+    })
 
     // get reviews by product id
-    app.get('/review/:id', async (req, res) => {
+    app.get('/review/product/:id', async (req, res) => {
       const id = req.params.id
+      console.log(id)
       const query = { porduct_id: id }
       const cursor = revColl.find(query)
       const result = await cursor.toArray()
+      console.log(result)
       res.send(result)
     })
 
