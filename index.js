@@ -79,6 +79,7 @@ const run = async () => {
       const result = await cursor.toArray()
       res.send(result)
     })
+
     // get user reviews
     app.get('/review/user/:id', async (req, res) => {
       const id = req.params.id
@@ -86,6 +87,14 @@ const run = async () => {
       const cursor = revColl.find(query)
       const result = await cursor.toArray()
       res.send(result)
+    })
+    // delete user reviews
+    app.delete('/review/user/:id', async (req, res) => {
+      const id = req.params.id
+      const query = { _id: ObjectId(id) }
+      const result = await revColl.deleteOne(query)
+      res.send(result)
+      console.log(result)
     })
   } finally {
   }
