@@ -67,6 +67,7 @@ const run = async () => {
     // add review
     app.post('/review', async (req, res) => {
       const review = req.body
+      console.log(review)
       const result = await revColl.insertOne(review)
       res.send(result)
     })
@@ -85,6 +86,7 @@ const run = async () => {
       const cursor = revColl.find(query)
       const result = await cursor.toArray()
       res.send(result)
+      console.log(result)
     })
     // update single reviews by review id
     app.put('/review/:id', async (req, res) => {
@@ -128,6 +130,17 @@ const run = async () => {
       const id = req.params.id
       const query = { _id: ObjectId(id) }
       const result = await revColl.deleteOne(query)
+      res.send(result)
+      console.log(result)
+    })
+
+    // delete alll reviews
+    app.delete('/services/delete/:id', async (req, res) => {
+      const id = req.params.id
+      const query = { user_id: id }
+      // const cursor = coll.find(query)
+      console.log(id)
+      const result = await revColl.deleteMany(query)
       res.send(result)
       console.log(result)
     })
