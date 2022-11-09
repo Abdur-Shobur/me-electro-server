@@ -71,7 +71,16 @@ const run = async () => {
       res.send(result)
     })
 
-    // get reviews
+    // get single reviews by review id
+    app.get('/review/:id', async (req, res) => {
+      const id = req.params.id
+      const query = { _id: ObjectId(id) }
+      const cursor = revColl.find(query)
+      const result = await cursor.toArray()
+      res.send(result)
+    })
+
+    // get reviews by product id
     app.get('/review/:id', async (req, res) => {
       const id = req.params.id
       const query = { porduct_id: id }
@@ -80,7 +89,7 @@ const run = async () => {
       res.send(result)
     })
 
-    // get user reviews
+    // get user reviews by user id
     app.get('/review/user/:id', async (req, res) => {
       const id = req.params.id
       const query = { user_id: id }
