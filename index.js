@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb')
 const color = require('colors')
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
 const port = process.env.PORT || 5000
 const app = express()
 // module
@@ -10,8 +12,7 @@ app.use(express.json())
 
 // assignment11
 // KIT3UhSh9Lsk8psn
-const uri =
-  'mongodb+srv://assignment11:KIT3UhSh9Lsk8psn@cluster0.uqjddlf.mongodb.net/?retryWrites=true&w=majority'
+const uri = process.env.DB_URL
 
 // const uri = 'mongodb://localhost:27017'
 const client = new MongoClient(uri, {
@@ -24,11 +25,41 @@ app.get('/', (req, res) => {
   res.send('<h1>Server is Running</h1>')
 })
 
+// jwt token
+const virifyJWT = (req, res, next) => {
+  const auth_user = req.headers.authorization
+  if (!auth_user) {
+    return res.send({
+      messsage: 'Cannot accesss',
+    })
+  }
+  const token = auth_user.split(' ')[1]
+
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decod) => {
+    if (err) {
+      return res.send({
+        messsage: 'Cannot accesss',
+      })
+    }
+    req.decod = decod
+    next()
+  })
+}
+
 const run = async () => {
   const db = client.db('assignment11')
   const coll = db.collection('services')
   const revColl = db.collection('review')
   try {
+    // jwt token
+    app.post('/jwt', (req, res) => {
+      const user = req.body
+      const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+        expiresIn: '10h',
+      })
+      res.send({ token })
+    })
+
     // get req
     app.get('/services', async (req, res) => {
       const limit = parseInt(req.query.limit)
@@ -52,14 +83,12 @@ const run = async () => {
       const service = req.body
       const result = await coll.insertOne(service)
       res.send(result)
-      console.log(req.body, result)
     })
 
     // delete services
     app.delete('/services/:id', async (req, res) => {
       const id = req.params.id
       const query = { _id: ObjectId(id) }
-      // const cursor = coll.find(query)
       const result = await coll.deleteOne(query)
       res.send(result)
     })
@@ -67,11 +96,11 @@ const run = async () => {
     // add review
     app.post('/review', async (req, res) => {
       const review = req.body
-      console.log(review)
       const result = await revColl.insertOne(review)
       res.send(result)
     })
-    // add review
+
+    // get all reives
     app.get('/review', async (req, res) => {
       const query = {}
       const cursor = revColl.find(query)
@@ -86,8 +115,8 @@ const run = async () => {
       const cursor = revColl.find(query)
       const result = await cursor.toArray()
       res.send(result)
-      console.log(result)
     })
+
     // update single reviews by review id
     app.put('/review/:id', async (req, res) => {
       const id = req.params.id
@@ -101,25 +130,25 @@ const run = async () => {
         },
       }
       const result = await revColl.updateOne(query, updateUser, option)
-      // const cursor = revColl.find(query)
-      // const result = await cursor.toArray()
       res.send(result)
     })
 
     // get reviews by product id
     app.get('/review/product/:id', async (req, res) => {
       const id = req.params.id
-      console.log(id)
       const query = { porduct_id: id }
       const cursor = revColl.find(query)
-      const result = await cursor.toArray()
-      console.log(result)
+      const result = await cursor.sort({ time: -1 }).toArray()
       res.send(result)
     })
 
     // get user reviews by user id
-    app.get('/review/user/:id', async (req, res) => {
+    app.get('/review/user/:id', virifyJWT, async (req, res) => {
+      const decod = req.decod.U_id
       const id = req.params.id
+      if (id !== decod) {
+        return res.send([])
+      }
       const query = { user_id: id }
       const cursor = revColl.find(query)
       const result = await cursor.toArray()
@@ -131,7 +160,6 @@ const run = async () => {
       const query = { _id: ObjectId(id) }
       const result = await revColl.deleteOne(query)
       res.send(result)
-      console.log(result)
     })
 
     // delete alll reviews
@@ -139,10 +167,8 @@ const run = async () => {
       const id = req.params.id
       const query = { user_id: id }
       // const cursor = coll.find(query)
-      console.log(id)
       const result = await revColl.deleteMany(query)
       res.send(result)
-      console.log(result)
     })
   } finally {
   }
