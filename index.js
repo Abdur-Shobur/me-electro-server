@@ -146,9 +146,7 @@ const run = async () => {
     app.get('/review/user/:id', virifyJWT, async (req, res) => {
       const decod = req.decod.U_id
       const id = req.params.id
-      if (id !== decod) {
-        return res.send([])
-      }
+
       const query = { user_id: id }
       const cursor = revColl.find(query)
       const result = await cursor.toArray()
